@@ -1,21 +1,12 @@
 
-const baseApiKey = 'MDpiM2VmYTVkMi0wOTZlLTExZTgtOTBjYi1jNzBmYzc4ZjA2MDc6bjliaGRCZjI3RUFIVUhZYThWSFhFYW9BYVdlTHlnSmVCek9j';
-const baseUrl = 'http://lcboapi.com/products';
-
-const baseParams = {
-	per_page:10,
-	where_not: 'is_dead, is_discontinued'
-	
-};
-
-export function searchForDrinks(url = baseUrl, apiKey = baseApiKey, returnParams = baseParams) {
+export function searchForDrinks(url, apiKey, returnParams, searchParam) {
 	
 	return (term) => {
 		
-		returnParams.q = term;
+		returnParams[searchParam] = term;
 		
 		const urlString = makeUrlStringFromObject(returnParams, url)
-		console.log('>>'+urlString)
+		
 		const headers = makeRequestObject(urlString, apiKey);
 		
 		async function func(headers) {
@@ -35,7 +26,7 @@ export function searchForDrinks(url = baseUrl, apiKey = baseApiKey, returnParams
 
 }
 
-function makeUrlStringFromObject(paramsObject, baseUrl ) {
+export function makeUrlStringFromObject(paramsObject, baseUrl ) {
 	let r = baseUrl;
 	if (typeof baseUrl === 'string' && Object.keys(paramsObject).length >0) {
 		r += '?';
@@ -44,10 +35,10 @@ function makeUrlStringFromObject(paramsObject, baseUrl ) {
 		})
 	}
 	
-	return r;
+	return r; //TODO: urlEncode
 }
 
-function makeRequestObject(url = baseUrl, apiKey = apiKey) {
+export function makeRequestObject(url, apiKey) {
 	const headers = new Headers();
 	headers.append('Authorization', 'Token ' + apiKey);
 	

@@ -1,20 +1,28 @@
-import * as lcbo from '../lcbo_api/lcbo_api_fetch';
-import {dataReducer} from '../lcbo_api/lcbo_api_data_adapters';
+import { apiSets } from '../lcbo_api/lcbo_api';
+import { searchForDrinks } from '../lcbo_api/lcbo_api_fetch';
+import { dataReducer } from '../lcbo_api/lcbo_api_data_adapters';
 
-export function updateDateOutPut(dropDownTarget) {
+export const findDrink = searchForDrinks(
+	apiSets.beverage.url,
+	apiSets.apiKey,
+	apiSets.beverage.baseParams,
+	'q'
+);
+
+const searchReducer = dataReducer(['image_thumb_url','name','producer_name','id']);
+
+export function updateOutPut( dropDownTarget) {
 	return resp => {
 		
-		console.log(resp);
-		
-		let data =  dataReducer(resp.result, ['image_thumb_url','name','producer_name','id'])
-		displayData(data, dropDownTarget);
+		let data =  searchReducer(resp.result)
+		return displayData(data, dropDownTarget);
 	}
 }
 
 export function displayData(data, dropDownTarget) {
 	const dropDownRenderer = renderFactory(dropDownTarget, dropDownTemplate())
 	
-	dropDownRenderer.renderDropDown(data)
+	return dropDownRenderer.renderDropDown(data)
 }
 
 function dropDownTemplate() {
@@ -46,7 +54,7 @@ const renderFactory = function(mainTarget, template) {
 	function renderDropDown(data = [], template = localTemplate ) {
 		
 		localMainTarget.innerHTML = '';
-		localMainTarget.appendChild(setUpDOMStructure(applyDataToTemplate(data,template)));
+		return localMainTarget.appendChild(setUpDOMStructure(applyDataToTemplate(data,template)));
 	}
 	
 	return {

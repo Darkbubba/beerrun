@@ -1,15 +1,20 @@
-export function dataReducer(rawData = [], desiredData = {}) {
+export function dataReducer( desiredData = {} ) {
 	
-	return rawData.reduce((collector, raw)=>{
-		let data = {}
-		desiredData.forEach(key=>{
-			data[key] = raw[key]
-		})
+	return rawData => {
 		
-		collector.push(data)
+		return rawData.reduce((collector, raw)=>{
+			let data = {};
+			desiredData.forEach(key=>{
+				data[key] = raw[key];
+			});
+			
+			collector.push(data);
+			
+			return collector;
+			
+		},[])
 		
-		return collector
-		
-	},[])
+	}
+	
 	
 }
