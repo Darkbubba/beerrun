@@ -1,9 +1,19 @@
 body {
 	margin: 0px;
-	padding: 0 px;
+	padding: 0px;
+	background-color: var(--colour-one);
 }
 
 .container {
 	display: flex;
+	margin: 1vh;
 	
 }
+
+input {
+	margin: 1vw;
+	padding: .5vw;
+	font-size: var(--narmal-font);
+	height: 2vh;
+}
+

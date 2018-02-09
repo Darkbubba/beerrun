@@ -1,6 +1,7 @@
 .show-me-the-booze {
-	width:70vw;
-	height: 100vh;
-	overflow-y: none;
+	width:80vw;
+	height: 97vh;
+	overflow: hidden;
+	border: solid 1px #444;
 	
 }

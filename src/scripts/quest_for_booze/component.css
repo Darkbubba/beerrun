@@ -1,7 +1,51 @@
 .quest-for-booze {
 	width:20vw;
-	height: 100vh;
-	overflow-y: auto ;
-	border: solid 1px #444;
+	height: 97vh;
+	overflow: auto;
+	border: solid 1px var(--colour-dark);
+	margin-right: 1vh;
+	background-color: var(--colour-white);
 	
 }
+
+.quest-for-booze img {
+	height:10vh;
+}
+
+.drop-down-item {
+	width: 83%;
+	display: flex;
+	margin: 2vh;
+	border: solid 1px var(--colour-dark);
+	overflow: hidden;
+	font-size: .9em;
+	align-items: center;
+	padding: 1vh;
+	background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0.88) 31%,rgba(98,154,214,0.68) 84%,rgba(50,124,202,0.68) 100%);
+	transition: all .2s;
+	
+}
+
+.drop-down-item:hover {
+	transform: scale(1.05);
+}
+
+.drop-down-item:active {
+	transform: scale(0.9);
+	border: solid 3px var(--colour-four);
+}
+
+
+/*
+
+
+
+<div >
+	<img src="https://dx5vpyka4lqst.cloudfront.net/products/289793/images/thumb.png" class="thumb" data-item="289793">
+	<div>
+		<div data-item="289793">Hogsback Vintage Lager</div>
+		<div data-item="289793">Hogsback Brewing Company</div>
+	</div>
+</div>
+
+*/

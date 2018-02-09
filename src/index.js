@@ -1,7 +1,9 @@
 import * as main from './scripts/main'
 
 
-import style from './styles/layout.css'
+import style from './styles/variables.css'
+
+import style1 from './styles/layout.css'
 import style2 from './styles/colours.css'
 import style3 from './styles/fonts.css'
 import style4 from './styles/typography.css'
