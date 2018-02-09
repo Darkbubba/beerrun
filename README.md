@@ -15,7 +15,7 @@ In the command line run:
 
 - index.html is in dist by default
 
-- to run tests, from root dir: npm test '.\src\scripts\**\*.spec.js'
+- to run tests, from root dir: npm test .\src\scripts\**\\*.spec.js
 
 #### Next Steps
 
