@@ -1,0 +1,22 @@
+body {
+	--main-font-family: 'Biryani', sans-serif;
+	
+	/* TOTO: get better names */
+	
+	--colour-one: #CB9A67;
+	--colour-two: #77FF8A;
+	--colour-three: #FFDCB7;
+	--colour-four: #977ECC;
+	--colour-five: #8A78B2;
+	--colour-dark: #444;
+	--colour-white: #fff;
+	/* font sizes */
+	
+	--small-font: .9em;
+	--narmal-font: 1.25em;
+	--large-font: 1.5em;
+	--largest-font: 1.75em;
+	
+	
+}
+
