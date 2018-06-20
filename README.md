@@ -3,7 +3,7 @@
 
 ## About this project
 
-This project is an MVP POC and so there are plenty of rough edges, minimal tests, and I am still experimenting with cleanarchetecture around module and css.
+This project is an MVP POC and so there are plenty of rough edges, minimal tests, and I am still experimenting with clean architecture around module and css.
 
 
 ### Installation

@@ -5,10 +5,8 @@ import {setUpMap} from './leaflet_api/leaflet_map'
 import {Observable} from 'rxjs/Rx';
 
 
-const inputSource = document.querySelector('#quest-for-booze > input')
+const inputSource = document.querySelector('.grid-item-one');
 const dropDownTarget = document.querySelector('#quest-for-booze > div');
-//const mapSource =  document.getElementById('show-me-the-booze');
-
 const beerMap = setUpMap('show-me-the-booze', latlongList.toronto);
 
 //handle DOM Events
@@ -21,15 +19,11 @@ let whereTheBoozeIs = Observable.fromEvent(dropDownTarget, 'mouseup')
 	.debounceTime(50);
 
 whatToLookFor.subscribe(value => {
-	
 	let boozeRequest = Observable.fromPromise(findDrink(value));
 	boozeRequest.subscribe(updateOutPut(dropDownTarget));//(func, error, complete)
-	
 });
 
 whereTheBoozeIs.subscribe(value => {
-	
-	let boozeLocation = Observable.fromPromise(findLocation(value));;
+	let boozeLocation = Observable.fromPromise(findLocation(value));
 	boozeLocation.subscribe(updateDateMap(beerMap));//(func, error, complete)
-	
 });
