@@ -1,19 +1,41 @@
 body {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	background-color: var(--colour-one);
 }
 
 .container {
-	display: flex;
-	margin: 1vh;
-	
+	margin: 20px;
+	height: 95vh;
+	display: grid;
+	grid-gap: 15px;
+	grid-template-columns: 25% 74.5%;
+	grid-template-rows: 7vh auto;
+	grid-template-areas:
+			"one three"
+			"two three"
+			;
+			
+}
+
+
+
+.grid-item-one {
+	grid-area: one;
+}
+
+.grid-item-two {
+	grid-area: two;
+}
+
+.grid-item-three {
+	grid-area: three;
 }
 
 input {
-	margin: 1vw;
+	
 	padding: .5vw;
 	font-size: var(--narmal-font);
-	height: 2vh;
+	
 }
 

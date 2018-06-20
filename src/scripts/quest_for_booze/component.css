@@ -1,9 +1,7 @@
 .quest-for-booze {
-	width:20vw;
-	height: 97vh;
+	
 	overflow: auto;
 	border: solid 1px var(--colour-dark);
-	margin-right: 1vh;
 	background-color: var(--colour-white);
 	
 }
