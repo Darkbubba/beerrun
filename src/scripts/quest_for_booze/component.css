@@ -21,6 +21,7 @@
 	padding: 1vh;
 	background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0.88) 31%,rgba(98,154,214,0.68) 84%,rgba(50,124,202,0.68) 100%);
 	transition: all .2s;
+	cursor: pointer;
 	
 }
 

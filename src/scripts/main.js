@@ -6,7 +6,7 @@ import {Observable} from 'rxjs/Rx';
 
 
 const inputSource = document.querySelector('.grid-item-one');
-const dropDownTarget = document.querySelector('#quest-for-booze > div');
+const dropDownTarget = document.querySelector('#quest-for-booze');
 const beerMap = setUpMap('show-me-the-booze', latlongList.toronto);
 
 //handle DOM Events
@@ -24,6 +24,8 @@ whatToLookFor.subscribe(value => {
 });
 
 whereTheBoozeIs.subscribe(value => {
-	let boozeLocation = Observable.fromPromise(findLocation(value));
-	boozeLocation.subscribe(updateDateMap(beerMap));//(func, error, complete)
+	if (value !== null) {
+		let boozeLocation = Observable.fromPromise(findLocation(value));
+		boozeLocation.subscribe(updateDateMap(beerMap));//(func, error, complete)
+	}
 });
